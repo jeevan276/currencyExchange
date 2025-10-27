@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: orange;
+}
+#main > h1 {
+  text-align: center;
+}
+.IO-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.IO-container > p {
+  text-align: center;
+}
+.IO-container > #from-currency,
+#to-currency,
+input {
+  height: 28px;
+  width: 268px;
+  outline: none;
+  border: 1px solid red;
+  padding-inline: 2%;
+  border-radius: 5px;
+}
+#c-btn {
+  height: 28px;
+  width: 268px;
+  border: none;
+  background: green;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+#displayCurrency {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  align-items: center;
+}

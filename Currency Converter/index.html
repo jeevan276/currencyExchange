@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main">
+      <h1>Currency Exchange Rate</h1>
+      <div class="IO-container">
+        <p>From:</p>
+        <select id="from-currency">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="NPR" selected>NPR</option>
+          <option value="INR">INR</option>
+          <option value="GBP">GBP</option>
+        </select>
+        <p>To:</p>
+        <select id="to-currency">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="NPR">NPR</option>
+          <option value="INR">INR</option>
+          <option value="GBP">GBP</option>
+        </select>
+        <p>Amount:</p>
+        <input type="number" id="convert-amount" />
+        <h3 id="displayCurrency">
+          <span id="from-amount"></span><span id="to-amount"></span>
+        </h3>
+        <button id="c-btn">Convert</button>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
