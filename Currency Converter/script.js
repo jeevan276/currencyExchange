@@ -33,7 +33,7 @@ function currencyConvert() {
       console.log(error.message);
     });
 }
-currencyConvert();
+
 
 const fromAmount = document.getElementById("from-amount");
 const toAmount = document.getElementById("to-amount");
