@@ -4,7 +4,6 @@ const amount = document.getElementById("convert-amount");
 const convertBtn = document.getElementById("c-btn");
 const APIkey = "1271e0918b8632f0b71e6631";
 
-const APIurl = `https://v6.exchangerate-api.com/v6/${APIkey}/pair/${from.value}/${to.value}`;
 
 // const APIurl = `https://v6.exchangerate-api.com/v6/${APIkey}/pair/USD/NPR`;
 
@@ -17,6 +16,7 @@ function currencyConvert() {
     alert("Please enter a valid amount.");
     return;
   }
+const APIurl = `https://v6.exchangerate-api.com/v6/${APIkey}/pair/${from.value}/${to.value}`;
 
   fetch(APIurl)
     .then((Response) => {
@@ -26,7 +26,12 @@ function currencyConvert() {
       return Response.json();
     })
 
-    .then((data) =>
+    .then((data) =>{
+      if(!data.conversion_rate){
+        alert('Conversion rate not available!');
+        return;
+      }
+    }
       displayCurrency(data, amountValue, fromCurrency, toCurrency)
     )
     .catch((error) => {
@@ -39,7 +44,7 @@ const fromAmount = document.getElementById("from-amount");
 const toAmount = document.getElementById("to-amount");
 
 function displayCurrency(data, amountValue, fromCurrency, toCurrency) {
-  let convertAmt = eval(`${amountValue} * ${data.conversion_rate}`).toFixed(2);
+  let convertAmt = eval(amountValue} * data.conversion_rate).toFixed(2);
   console.log(convertAmt);
   fromAmount.innerText = `${amountValue} ${from.value} =`;
   toAmount.innerText = `${convertAmt} ${to.value}`;
