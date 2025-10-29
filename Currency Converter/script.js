@@ -4,7 +4,6 @@ const amount = document.getElementById("convert-amount");
 const convertBtn = document.getElementById("c-btn");
 const APIkey = "1271e0918b8632f0b71e6631";
 
-
 // const APIurl = `https://v6.exchangerate-api.com/v6/${APIkey}/pair/USD/NPR`;
 
 function currencyConvert() {
@@ -16,8 +15,7 @@ function currencyConvert() {
     alert("Please enter a valid amount.");
     return;
   }
-const APIurl = `https://v6.exchangerate-api.com/v6/${APIkey}/pair/${from.value}/${to.value}`;
-
+  const APIurl = `https://v6.exchangerate-api.com/v6/${APIkey}/pair/${from.value}/${to.value}`;
   fetch(APIurl)
     .then((Response) => {
       if (!Response.ok) {
@@ -26,19 +24,17 @@ const APIurl = `https://v6.exchangerate-api.com/v6/${APIkey}/pair/${from.value}/
       return Response.json();
     })
 
-    .then((data) =>{
-      if(!data.conversion_rate){
-        alert('Conversion rate not available!');
+    .then((data) => {
+      if (!data.conversion_rate) {
+        alert("Conversion rate not available.");
         return;
       }
-    }
-      displayCurrency(data, amountValue, fromCurrency, toCurrency)
-    )
+      displayCurrency(data, amountValue, fromCurrency, toCurrency);
+    })
     .catch((error) => {
       console.log(error.message);
     });
 }
-
 
 const fromAmount = document.getElementById("from-amount");
 const toAmount = document.getElementById("to-amount");
