@@ -10,7 +10,7 @@ const APIkey = "1271e0918b8632f0b71e6631";
 function currencyConvert() {
   const fromCurrency = from.value;
   const toCurrency = to.value;
-  const amountValue = amount.value;
+  const amountValue = parseFloat(amount.value);
 
   if (isNaN(amountValue) || amountValue <= 0) {
     alert("Please enter a valid amount.");
