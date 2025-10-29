@@ -39,7 +39,7 @@ const fromAmount = document.getElementById("from-amount");
 const toAmount = document.getElementById("to-amount");
 
 function displayCurrency(data, amountValue, fromCurrency, toCurrency) {
-  let convertAmt = (amountValue * data.conversion_rate).toFixed(2);
+  let convertAmt = eval(`${amountValue} * ${data.conversion_rate}`).toFixed(2);
   console.log(convertAmt);
   fromAmount.innerText = `${amountValue} ${from.value} =`;
   toAmount.innerText = `${convertAmt} ${to.value}`;
